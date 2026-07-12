@@ -1,3 +1,7 @@
+output "advisor_suppressions_id" {
+  description = "Map of id values across all advisor_suppressions, keyed the same as var.advisor_suppressions"
+  value       = { for k, v in azurerm_advisor_suppression.advisor_suppressions : k => v.id }
+}
 output "advisor_suppressions_name" {
   description = "Map of name values across all advisor_suppressions, keyed the same as var.advisor_suppressions"
   value       = { for k, v in azurerm_advisor_suppression.advisor_suppressions : k => v.name }
